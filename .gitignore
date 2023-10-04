@@ -1,8 +1,8 @@
 .vs/
 .vsconfig
 *.meta
-*.csproj
-*.sln
+#*.csproj
+#*.sln
 obj/
 Logs/
 Library/
