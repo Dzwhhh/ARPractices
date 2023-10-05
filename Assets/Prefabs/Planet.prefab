@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8820110669407803056}
   - component: {fileID: 2133500194553916330}
   - component: {fileID: 3621354866402167184}
-  - component: {fileID: -6993947108426569880}
+  - component: {fileID: 5003517290343237633}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -27,6 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64331651660598056}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
@@ -34,7 +35,6 @@ Transform:
   m_Children:
   - {fileID: 6736209433687547082}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8820110669407803056
 MeshFilter:
@@ -107,7 +107,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-6993947108426569880
+--- !u!114 &5003517290343237633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 64331651660598056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dedb301e6b6874ea48aa6db686bb0f57, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a0600c8434d6403583d36547bc56582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   overlayText: {fileID: 0}
@@ -152,7 +152,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6003872485910223874}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -179,7 +178,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 2180264, guid: 0747608c9234e4a219548d656a2970c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -223,8 +222,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '[Text]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0747608c9234e4a219548d656a2970c5, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 0747608c9234e4a219548d656a2970c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

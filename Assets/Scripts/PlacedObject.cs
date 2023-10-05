@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlanetObject : MonoBehaviour
+public class PlacedObject : MonoBehaviour
 {
     public bool IsSelected { get; set; }
 

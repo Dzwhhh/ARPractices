@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SelectionController : MonoBehaviour
 {
-    public List<PlanetObject> Planets;
+    public List<PlacedObject> Planets;
 
     public Color ActiveColor = Color.blue;
     public Color InActiveColor = Color.gray;
@@ -36,52 +36,52 @@ public class SelectionController : MonoBehaviour
             return;
         }
 
-        // Vector2 touchPositon;
-        //if (Input.touchCount > 0)
-        //{
-        //    Debug.Log("touch screen");
-        //    Touch touch = Input.GetTouch(0);
-        //    touchPositon = touch.position;
-
-        //    if (touch.phase == TouchPhase.Began)
-        //    {
-        //        Ray ray = ArCamera.ScreenPointToRay(touchPositon);
-        //        RaycastHit hitObject;
-        //        if (Physics.Raycast(ray, out hitObject))
-        //        {
-        //            PlanetObject planet = hitObject.transform.GetComponent<PlanetObject>();
-        //            if (planet != null)
-        //            {
-        //                ChangeSelectedObject(planet);
-        //            }
-        //        }
-        //    }
-        //}
-
-        Debug.Log("click screen");
-        if (Input.GetMouseButtonDown(0))
+         Vector2 touchPositon;
+        if (Input.touchCount > 0)
         {
-            Vector2 mousePosition = Input.mousePosition;
-            Ray ray = ArCamera.ScreenPointToRay(mousePosition);
-            RaycastHit hitObject;
-            if (Physics.Raycast(ray, out hitObject))
+            Debug.Log("touch screen");
+            Touch touch = Input.GetTouch(0);
+            touchPositon = touch.position;
+
+            if (touch.phase == TouchPhase.Began)
             {
-                PlanetObject planet = hitObject.transform.GetComponent<PlanetObject>();
-                if (planet != null)
+                Ray ray = ArCamera.ScreenPointToRay(touchPositon);
+                RaycastHit hitObject;
+                if (Physics.Raycast(ray, out hitObject))
                 {
-                    ChangeSelectedObject(planet);
+                    PlacedObject planet = hitObject.transform.GetComponent<PlacedObject>();
+                    if (planet != null)
+                    {
+                        ChangeSelectedObject(planet);
+                    }
                 }
             }
         }
+        
+        // Debug.Log("click screen");
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     Vector2 mousePosition = Input.mousePosition;
+        //     Ray ray = ArCamera.ScreenPointToRay(mousePosition);
+        //     RaycastHit hitObject;
+        //     if (Physics.Raycast(ray, out hitObject))
+        //     {
+        //         PlacedObject placed = hitObject.transform.GetComponent<PlacedObject>();
+        //         if (placed != null)
+        //         {
+        //             ChangeSelectedObject(placed);
+        //         }
+        //     }
+        // }
     }
-
-    void ChangeSelectedObject(PlanetObject selectedPlanet)
+        
+    void ChangeSelectedObject(PlacedObject selectedPlaced)
     {
         Debug.Log("Enter ChangeSelectedObject");
-        foreach (PlanetObject planet in Planets)
+        foreach (PlacedObject planet in Planets)
         {
             MeshRenderer meshRenderer = planet.GetComponent<MeshRenderer>();
-            if (selectedPlanet != planet)
+            if (selectedPlaced != planet)
             {
                 planet.IsSelected = false;
                 meshRenderer.material.color = InActiveColor;

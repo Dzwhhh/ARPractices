@@ -5,9 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Placement.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    guid: bd6b1c62bf30843288b614a7cb8b0dfb
+  - enabled: 0
+    path: Assets/Scenes/PlacementWithUI.unity
+    guid: 5d830c2e385b243cd82d52321be53b1d
+  - enabled: 1
+    path: Assets/Scenes/Selection.unity
+    guid: 3e3dcbdde91ee4f42966cfe5942eae47
   m_configObjects:
-    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 27ca79f9a17f040549960e041cbac343, type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 7e4e2726965574779a6df2d2d4844277, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: f579e68a1b5e7463dbd2991a1c90733d, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4f407d914855d451c80f64aeb4fec887, type: 2}

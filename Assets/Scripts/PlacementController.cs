@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
@@ -9,19 +10,6 @@ public class PlacementController : MonoBehaviour
 {
     [SerializeField]
     private GameObject placedPrefab;
-
-    public GameObject PlacedPrefab
-    {
-        get
-        {
-            return placedPrefab;
-        }
-
-        set
-        {
-            placedPrefab = value;
-        }
-    }
 
     private ARRaycastManager raycastManager;
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
@@ -52,17 +40,27 @@ public class PlacementController : MonoBehaviour
     void Update()
     {
         if (!TryGetTouchPosition(out Vector2 touchPosition))
+        {
+            Debug.Log("no touch detected");
             return;
-
+        }
+        
+        Debug.Log($"touch position:{touchPosition.ToString()}");    
         if (raycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
         {
             var hitPose = hits[0].pose;
 
             // instantiate new object
-            Vector3 objectPosition = hitPose.position;
-            objectPosition.y += 0.5f;
+            hitPose.position.y += 0.05f;
 
-            Instantiate(placedPrefab, hitPose.position, hitPose.rotation);
+            var placedObject = Instantiate(placedPrefab, hitPose.position, hitPose.rotation);
+            StartCoroutine(DestroyObject(placedObject));
         }
+    }
+
+    IEnumerator DestroyObject(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(5.0f);
+        Destroy(gameObject);
     }
 }
